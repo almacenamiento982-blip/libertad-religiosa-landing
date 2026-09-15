@@ -276,13 +276,9 @@
     0%, 100% { transform: translateY(0) rotate(-0.6deg); }
     50% { transform: translateY(-14px) rotate(0.6deg); }
   }
-  @keyframes floatShadow {
-    0%, 100% { transform: scaleX(1); opacity: 0.5; }
-    50% { transform: scaleX(0.86); opacity: 0.32; }
-  }
   @media (prefers-reduced-motion: reduce) {
     .eyebrow, .hero h1, .hero-sub, .hero-ctas, .hero-meta, .book-stage,
-    .book-float, .book-shadow {
+    .book-float {
       animation: none !important;
       opacity: 1 !important;
       transform: none !important;
@@ -293,8 +289,8 @@
   .hero-visual { display: flex; justify-content: center; }
   .book-stage {
     position: relative;
-    width: min(340px, 68vw);
-    aspect-ratio: 3 / 4.2;
+    width: min(440px, 82vw);
+    aspect-ratio: 1356 / 864;
     opacity: 0;
     animation: rise 0.7s ease 0.26s forwards;
     perspective: 1200px;
@@ -312,19 +308,7 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 20px 28px hsl(var(--shadow-color) / 0.55));
-  }
-  .book-shadow {
-    position: absolute;
-    left: 8%;
-    right: 8%;
-    bottom: 2%;
-    height: 22px;
-    border-radius: 50%;
-    background: radial-gradient(closest-side, hsl(var(--shadow-color) / 0.55), transparent 75%);
-    filter: blur(4px);
-    animation: floatShadow 6s ease-in-out infinite;
-    animation-delay: 0.9s;
+    filter: drop-shadow(0 18px 22px hsl(var(--shadow-color) / 0.4));
   }
 
   /* ---------- Buttons ---------- */
@@ -449,7 +433,6 @@
 
       <div class="hero-visual">
         <div class="book-stage" id="bookStage">
-          <div class="book-shadow" aria-hidden="true"></div>
           <div class="book-float" id="bookFloat">
             <img src="libro-3d.png" alt="Libro Libertad Religiosa con Valores en Colombia, edición de tapa dura" />
           </div>
